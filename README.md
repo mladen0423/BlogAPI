@@ -22,3 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+rails new [api_name]  — api
+  you can use -d [database] if you don’t wanna use sqlite3
+cd [api_name]
+mkdir app/controllers/api
+mkdir app/controllers/api/v1
+
+rails g scaffold Article title:string content:text slug:string
+rails db:migrate
+
+mv app/controllers/articles_controller.rb app/controllers/api/v1
+
+update app/controllers/api/v1/articles_controller.rb file
+update config/routes.rb file
+
+rails db:seed
+
