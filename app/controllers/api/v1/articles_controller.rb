@@ -1,5 +1,6 @@
 class Api::V1::ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /articles
   # GET /articles.json
